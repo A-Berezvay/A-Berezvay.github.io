@@ -1,1 +1,92 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="/Csenge birthday/style.css">
+</head>
+<body>
+    <header>
+        <h1>Birthday girl!</h1>
+        <p>A little present of our shared memories.</p>
+    </header>
+    <main>
+        <section class="gallery">
+            <!-- Repeat this block for each image -->
+            <div class="photo hidden">
+                <img src="./img/Knuds.jpg" alt="A special moment">
+                <p class="comment">Everything started here...</p>
+            </div>
+            <!-- Repeat the block until image 12 -->
+            <div class="photo hidden">
+                <img src="./img/Rabalder.jpg" alt="A special moment">
+                <p class="comment">You may think this picture is basic. But one of my favourite</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Autumn.jpg" alt="A special moment">
+                <p class="comment">Our first image as a couple</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Winter 1.jpg" alt="A special moment">
+                <p class="comment">And the first trip to Esbjerg</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Silence baking.jpg" alt="A special moment">
+                <p class="comment">Silence baking was fun. Didn't look good but tasted good tho</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Winter 2.jpg" alt="A special moment">
+                <p class="comment">Oh how you refused my jacket in this cold day haha</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Smores in fort.jpg" alt="A special moment">
+                <p class="comment">Best fort we ever made... (without spilling anything on the bed haha)</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Running.jpg" alt="A special moment">
+                <p class="comment">Every now and again... but we do excersice</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Spa day.jpg" alt="A special moment">
+                <p class="comment">What a delight to do a spa day</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Sushi day.jpg" alt="A special moment">
+                <p class="comment">This Sushi trip in Odense was interesting. Do you remember?</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Wedding Polaroid.jpg" alt="A special moment">
+                <p class="comment">Best part of this day was, making the wedding gift together having to calm you down after innumerous mental breakdown</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Hungary.jpg" alt="A special moment">
+                <p class="comment">In Budapest for the first time</p>
+            </div>
+            <div class="photo hidden">
+                <img src="./img/Sushi.jpg" alt="A special moment">
+                <p class="comment">And another sushi. I know you love it, you deserve it!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>I hope you enjoyed this little nostalgia birthday present!<br>
+            Love you!</p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
